@@ -1,0 +1,118 @@
+@import '../../../main_page/frontend/MainPage.css';
+
+/* Kontainer utama agar button bisa absolute di bawah */
+:root {
+  --sidebar-program-scale: 0.8;
+  --student-error-font-size: 0.97rem;
+  --student-error-color: #f70000;
+}
+.simulate-program-btn{
+  padding: 0.5rem 0.8rem;
+  background: #2b4294;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  top: 385px;
+  left: 355px;
+  position: fixed;
+}
+.simulate-program-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.simulate-program-btn:hover,
+.simulate-program-btn.active {
+  background: #3058eb;
+}
+.simulate-program-btn:hover::after,
+.simulate-program-btn.active::after {
+  width: 100%;
+}
+.simulate-program-panel{
+  position: fixed;
+  top: 440px;
+  left: 0px;
+  width: calc(1160px * var(--sidebar-program-scale));
+  height: calc(540px * var(--sidebar-program-scale));
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 20;
+  padding: calc(2.2rem * var(--sidebar-program-scale));
+  border-radius: 9px;
+  display: flex;
+  align-items: flex-start;
+  
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%); 
+  /* animation: slideInLeft 0.5s cubic-bezier(.4,2,.6,1) both; */
+  animation: programFadeIn 0.50s cubic-bezier(.4,2,.6,1) both;
+  box-sizing: border-box;
+}
+@keyframes programFadeIn {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+.simulate-program-title {
+  text-align: left;
+  font-size: calc(1.3rem * var(--sidebar-program-scale));
+    font-weight: 600;
+  margin-top: -19px;
+}
+.simulate-program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: calc(0.2rem * var(--sidebar-student-scale)) calc(0.5rem * var(--sidebar-student-scale));
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  margin-left: -14.4rem;
+  margin-top: 15px;
+  position: absolute;
+}
+
+.simulate-program-input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: calc(0.7rem * var(--sidebar-student-scale)) calc(0.8rem * var(--sidebar-student-scale));
+  border: 1.5px solid #b1b8c4;
+  border-radius: 8px;
+  font-size: calc(1rem * var(--sidebar-student-scale));
+  background: rgba(247,250,255,0.95);
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.04);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.simulate-program-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.06);
+  padding: calc(0.2em * var(--sidebar-student-scale)) calc(0.7rem * var(--sidebar-student-scale)) calc(0.5rem * var(--sidebar-student-scale)) calc(0.7rem * var(--sidebar-student-scale));
+  margin-bottom: 0.2rem;
+  border: 1.5px solid #eaf0fa;
+  transition: box-shadow 0.2s, border 0.2s;
+  box-sizing: border-box;
+  width: calc(350px * var(--sidebar-student-scale));
+  text-align: left;
+}
+.simulate-program-field label {
+  font-size: calc(1rem * var(--sidebar-student-scale));
+  color: #234466;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+  margin-left: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

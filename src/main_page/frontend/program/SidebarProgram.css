@@ -1,0 +1,121 @@
+@import '../../../main_page/frontend/MainPage.css';
+
+.program-register-panel {
+  position: fixed;
+  top: 55px;
+  left: 225px;
+  width: 900px;
+  height: 520px;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 20;
+  padding: 2.2rem 2.2rem 2.2rem 2.2rem;
+  border-radius: 9px;
+  display: flex;
+  align-items: flex-start;
+  
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%); 
+  animation: slideInLeft 0.5s cubic-bezier(.4,2,.6,1) both;
+  box-sizing: border-box;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.program-register-form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.program-register-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem 1.2rem;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+.program-register-input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.7rem 0.8rem;
+  border: 1.5px solid #b1b8c4;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(247,250,255,0.95);
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.04);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.program-register-submit {
+  width: 15%;
+  padding: 1rem 0;
+  background:  #2b4294 60%;
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
+  letter-spacing: 0.5px;
+}
+.program-register-submit:focus {
+  outline: none;
+  box-shadow: none;
+}
+.program-register-submit:hover {
+  background: #3058eb;
+}
+
+.program-register-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: rgba(255,255,255,0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.06);
+  padding: 0.7rem 0.7rem 0.5rem 0.7rem;
+  margin-bottom: 0.2rem;
+  border: 1.5px solid #eaf0fa;
+  transition: box-shadow 0.2s, border 0.2s;
+  box-sizing: border-box;
+  min-width: 0;
+  text-align: left;
+}
+
+.program-register-field label {
+  font-size: 0.97rem;
+  color: #234466;
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+  margin-left: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .program-register-panel {
+    width: 100vw;
+    left: 0;
+    border-radius: 0;
+    padding: 1.2rem 0.5rem;
+  }
+  .program-register-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .program-register-grid {
+    grid-template-columns: 1fr;
+  }
+}

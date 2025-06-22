@@ -1,0 +1,167 @@
+/* Login Page Styles */
+body {
+  background: none !important;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: relative;
+}
+
+.bg-overlay-login {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: url('./assets/eplc_BG.jpg') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.login-container {
+  max-width: 350px;
+  margin: 80px auto;
+  padding: 2rem 2.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.login-form label {
+  display: block;
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="email"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  display: block;
+}
+.password-input-wrapper {
+  width: 100%;
+}
+.show-hide-btn {
+  display: block;
+  width: 100%;
+  margin: 0.3rem 0 0 0;
+  background: none;
+  border: 1px solid #007bff;
+  color: #007bff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  transition: background 0.2s, color 0.2s;
+}
+.show-hide-btn:hover {
+  background: #007bff;
+  color: #fff;
+}
+.show-hide-btn.small {
+  width: 90px;
+  font-size: 0.85rem;
+  padding: 0.3rem 0;
+  margin-top: 0.3rem;
+  margin-bottom: 0.9rem;
+}
+.login-btn {
+  width: 100%;
+  padding: 0.7rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  transition: background 0.2s;
+  position:relative;
+}
+.login-btn:hover {
+  background: #0056b3;
+}
+.forget-btn {
+  display: block;
+  width: 50%;
+  margin: 0.2rem 0 0 0;
+  background: none;
+  border: none;
+  color: #f88181;
+  font-size: 0.70rem;
+  cursor: pointer;
+  text-align: right;
+  text-decoration: underline;
+  transition: color 0.2s;
+  position:relative;
+  bottom: 1px;
+  right: -122px;
+}
+.forget-btn:hover {
+  color: #0056b3;
+}
+
+.eplc-title {
+  position: absolute;
+  top: 160px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.2em;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 1px 0 #333;
+  z-index: 2;
+}
+
+.notif-popup {
+  position: fixed;
+  bottom: 115px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 260px;
+  max-width: 90vw;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  z-index: 1000;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  text-align: center;
+  animation: fadeInNotif 0.3s;
+  opacity: 1;
+  transition: opacity 0.7s;
+}
+.notif-popup.success {
+  background: #e6ffed;
+  color: #1a7f37;
+  border: 1.5px solid #1a7f37;
+}
+.notif-popup.error {
+  background: #ffeaea;
+  color: #c0392b;
+  border: 1.5px solid #c0392b;
+}
+.notif-popup.info {
+  background: #eaf4ff;
+  color: #1766a3;
+  border: 1.5px solid #1766a3;
+}
+.notif-popup.fade-in {
+  opacity: 1;
+}
+.notif-popup.fade-out {
+  opacity: 0;
+}
+@keyframes fadeInNotif {
+  from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}

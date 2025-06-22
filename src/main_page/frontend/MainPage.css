@@ -1,0 +1,233 @@
+/* MainPage Layout mengikuti Login */
+.mainpage-bg {
+  position: relative;
+  background: none !important;
+  /* left: 100px; */
+  /* width: 50vw;
+  border: 5px dashed brown; */
+}
+.bg-overlay-mainpage {
+  position: fixed;
+  rotate: 180deg;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(90deg, #1940cf 60%, #5997f5 80%);
+  background-size: cover;
+  opacity: 0.5; /* Ubah opacity sesuai kebutuhan main_page, gunakan 0.0 - 1.0 */
+  pointer-events: none;
+}
+
+.mainpage-navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: linear-gradient(90deg, #1940cf 60%, #5997f5 100%);
+  /* box-shadow: 0 2px 12px rgba(0,0,0,0.07); */
+  z-index: 10;
+  padding: 0.3rem 0;
+}
+
+.mainpage-navbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.mainpage-navbar-inner {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.mainpage-menu-btn {
+  background: none;
+  border: none;
+  outline: none;
+  /* color: #fffb00; */
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 600;
+  padding: 0.4rem 0.7rem;
+  margin: 0 0.2rem;
+  border-radius: 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s, font-size 0.25s;
+  box-shadow: none;
+}
+.mainpage-menu-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.mainpage-menu-btn::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #7893f5 60%, #ffffff 100%);
+  border-radius: 3px;
+  transition: width 0.25s;
+  margin: 0 auto;
+}
+/* ini untuk saat button nya active dan di hover juga */
+.mainpage-menu-btn:hover,
+.mainpage-menu-btn.active {
+  color: #f5f370;
+  font-size: larger;
+  text-shadow: #000000 0.5px 5px 3px;
+}
+.mainpage-menu-btn:hover::after,
+.mainpage-menu-btn.active::after {
+  width: 100%;
+}
+
+.mainpage-sidebar-submenu {
+  position: fixed;
+  top: 15px;
+  left: 0px;
+  width: 220px;
+  background: linear-gradient(150deg, #1940cf 60%, #5997f5 100%);
+  box-shadow: 2px 0 12px rgba(0,0,0,0.07);
+  z-index: 9;
+  padding: 4rem 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  min-height: 300px;
+  border-radius: 0px 0px 9px 0px;
+  box-shadow: #494949 -5px 1.5px 9px;
+  /* ini agar bisa di scroll */
+  max-height: calc(95vh - 60px);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  scroll-behavior:smooth;
+  direction: rtl;              /* Membalikkan posisi scrollbar ke kiri */
+  text-align: left;
+  animation: sidebarFadeIn 0.45s cubic-bezier(.4,2,.6,1) both;
+}
+.mainpage-sidebar-submenu::-webkit-scrollbar{
+display: none;
+}
+.mainpage-sidebar-submenu>* {
+  direction: ltr; 
+}
+
+@keyframes sidebarFadeIn {
+  from {
+    transform: translateY(-40px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+.sidebar-dropdown {
+  /* background: #b1b8c4; */
+  background: #86aef3;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  margin: 0 0.7rem;
+  padding: 0.7rem 0.7rem;
+  transition: box-shadow 0.7s;
+  outline: none;
+  box-shadow: none;
+}
+.sidebar-dropdown:focus {
+  outline: none;
+  box-shadow: none;
+}
+.sidebar-dropdown-title {
+  font-size: 1.04rem;
+  font-weight: 600;
+  /* color: #234466; */
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 0;
+  border: none;
+  background: none;
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+  transition: font-size 0.25s, color 0.25s;
+  text-align: left;
+}
+/* it works here */
+.sidebar-dropdown-title:focus {
+  outline: none;
+  box-shadow: none;
+}
+.sidebar-dropdown-title:hover,
+.sidebar-dropdown-title.active {
+  color: #f5f370;
+  font-size: larger;
+}
+.sidebar-dropdown-title.active {
+  text-shadow: #000000 0.5px 2px 3px;
+}
+.sidebar-dropdown-content {
+  margin-top: 0.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.sidebar-dropdown.open .sidebar-dropdown-content {
+  display: flex;
+}
+.sidebar-submenu-btn {
+  background: none;
+  color: #ffffff;
+  font-size: 0.98rem;
+  text-align: left;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  background: none;
+  width: 100%;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  text-shadow: #555454 0.2px 0.5px 0.2px;
+  border-radius: 3px;
+  /* transition: background 0.2s, color 0.2s; */
+}
+.sidebar-submenu-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.sidebar-submenu-btn:hover,
+.sidebar-submenu-btn.active {
+  background: #eaf4ff;
+  color: #043d7a;
+}
+.sidebar-submenu-btn::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #27345f 10%, #ffffff 100%);
+  border-radius: 5px;
+  transition: width 0.4s;
+}
+/* .sidebar-submenu-btn:hover::after, */
+.sidebar-submenu-btn.active::after {
+  background: #eaf4ff;
+  color: #043d7a;
+  /* box-shadow: inset 5 5 5 5px #043d7a; */
+  width: 100%;
+}
