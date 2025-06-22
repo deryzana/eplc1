@@ -1,0 +1,1 @@
+async function n(e){return await(await fetch("http://localhost:5137/api/student/add-temp-student",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({fullName:e[0],email:e[1],phoneNumber:e[2],gender:e[3],address:e[4],city:e[5],program:e[6],period:e[7],pretestScore:e[8],placeofBirth:e[9],dateOfBirth:e[10]})})).json()}export{n as submitStudentRegister};
